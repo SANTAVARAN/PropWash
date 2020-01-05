@@ -106,8 +106,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-
-    data = JSON.parse('{{catalog}}');
+    var data = '[{"category": "motors", "items": [{"name": "\u041c\u043e\u0442\u043e\u0440", "specs": [["voltage", "sv"], ["speed", 10]]}, {"name": "\u041c\u043e\u0442\u043e\u04402", "specs": [["voltage", "sv"], ["speed", 20]]}]}, {"category": "Camera", "items": [{"name": "Camera", "specs": [["Size", 25], ["blades", 3]]}]}]';
+    data = JSON.parse(data);
     console.log(data)
 
     var app = new Vue({

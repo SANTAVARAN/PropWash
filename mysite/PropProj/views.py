@@ -32,7 +32,7 @@ def hello_world(request):
     print(catalog)
 
 
-    return render(request, "configurator.html", {"catalog": catalog})
+    return render(request, "configurator.html", {"catalog": json.dumps(catalog)})
     #if part.Type != part.Type + 1:
 
 
