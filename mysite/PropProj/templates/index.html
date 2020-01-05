@@ -13,12 +13,11 @@
 </form>
 
 <form action="/PropProj/index">
-   <p><select size="3" multiple name="hero[]">
-    <option disabled>Выберите героя</option>
-    <option value="Чебурашка">Чебурашка</option>
-    <option selected value="Крокодил Гена">Крокодил Гена</option>
-    <option value="Шапокляк">Шапокляк</option>
-    <option value="Крыса Лариса">Крыса Лариса</option>
+   <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
    </select></p>
    <p><input type="submit" value="Отправить"></p>
   </form>

@@ -19,16 +19,16 @@
 
 <div class="container">
 
-<form class="form" style="margin-top: -60px;">
+<form class="form" action="/PropProj/index" style="margin-top: -60px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите героя</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -61,16 +61,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 0px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 0px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -103,16 +103,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -145,16 +145,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -187,16 +187,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+         <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -229,16 +229,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -271,16 +271,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -313,16 +313,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
@@ -355,16 +355,16 @@
     </div>
 </form>
 
-    <form class="form" style="margin-top: 15px;">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
     <div class="form-group row">
         <div class="col-2"><label class="form-label">Комплектующая</label></div>
         <div class="col-8">
-          <select class="form-control" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <p><select name="part">
+       <option disabled>Выберите комплектующую</option>
+       {% for part in parts %}
+            <option value="{{ part.Id }}">{{ part.Name }}</option>
+       {% endfor %}
+   </select></p>
             </div>
 
     <div class="col-2">
