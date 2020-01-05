@@ -7,9 +7,21 @@
 </head>
 
 <h1>HEH</h1>
-<form action="/PropProj/PropProj.urls">
+<form action="/PropProj/index">
    <p><input name="login"> <input type="password" name="pass"></p>
    <p><input type="submit"></p>
 </form>
+
+<form action="/PropProj/index">
+   <p><select size="3" multiple name="hero[]">
+    <option disabled>Выберите героя</option>
+    <option value="Чебурашка">Чебурашка</option>
+    <option selected value="Крокодил Гена">Крокодил Гена</option>
+    <option value="Шапокляк">Шапокляк</option>
+    <option value="Крыса Лариса">Крыса Лариса</option>
+   </select></p>
+   <p><input type="submit" value="Отправить"></p>
+  </form>
+
 </body>
 </html>
