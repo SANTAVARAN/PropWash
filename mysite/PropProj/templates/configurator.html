@@ -42,7 +42,7 @@
     <form class="form" action="/PropProj/index" style="margin-top: 15px;">
         <div class="form-group row" v-for="category in catalog">
 
-            <div class="col-2"><strong>${category['category']}</strong></div>
+            <div class="col-2"><strong>${category['name']}</strong></div>
             <div class="col-8">
                 <p><select name="part" class="form-control" id="inlineFormCustomSelectPref">
                     <option>Выберите комплектующую</option>
@@ -107,7 +107,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 
-    data = JSON.parse('{{catalog}}');
+    data = JSON.parse('{{catalog|safe}}');
     console.log(data)
 
     var app = new Vue({
