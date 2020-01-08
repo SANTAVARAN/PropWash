@@ -36,6 +36,5 @@ def hello_world(request):
     return render(request, "configurator.html", {"catalog": json.dumps(catalog)})
     #if part.Type != part.Type + 1:
 
-
 def index(request):
     return request.GET
