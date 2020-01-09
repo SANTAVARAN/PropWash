@@ -44,7 +44,7 @@ body {
 header {
   background: #1e1e1e;
   text-align: center;
-  height:160px;
+  height:200px;
   background-color: #ff0000;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000000' stroke-width='90.7' stroke-opacity='0.49' %3E%3Ccircle fill='%23ff0000' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23ef0a03' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23de1105' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ce1507' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23be1809' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23af1a0a' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%239f1b0b' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23901b0c' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23821b0c' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23731a0c' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%2365190c' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%2357180b' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%2349160a' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%233c1408' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%232f1206' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23230e04' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23170702' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23000000' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
 background-attachment: fixed;
@@ -81,7 +81,7 @@ nav ul {
   width: 25%;
   float: left;
   position: relative;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Impact', sans-serif;
 
 }
 .topmenu > li > a {
@@ -95,7 +95,7 @@ nav ul {
 .topmenu li a:hover {color: #D5B45B;}
 .submenu-link:after {
   content: "\f107";
-  font-family: "FontAwesome";
+  font-family: "Impact";
   color: inherit;
   margin-left: 10px;
 
@@ -166,10 +166,11 @@ nav ul {
 <body>
 
 <header>
-    <button type="button" style="margin-top:3px" class="color red button" type="submit" onClick='location.href="/login"' align="right">Вход</button>
 
     <a class="logo" style="color:#b22222">PropWash</a>
-     <nav>
+    <button style="float: right;" type="button" style="margin-top:3px" class="color red button" type="submit" onClick='location.href="/login"' align="right">Вход</button>
+
+    <nav>
         <ul class="topmenu">
             <li style="margin-right:20px"><a href="/">Каталог</a></li>
             <li><a href="help.html">Справка</a></li>

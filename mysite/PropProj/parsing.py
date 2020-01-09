@@ -4,7 +4,7 @@ import sqlite3
 conn = sqlite3.connect('/Users/arsenijsitnickij/Documents/SHP/PropWash/git/mysite/db.sqlite3')
 c = conn.cursor()
 def add_part(partname,type,ImageUrl):
-    c.execute("INSERT INTO PropProj_part (Name,Type,ImageUrl) VALUES ('%s','%s')"%(partname,type,ImageUrl))
+    c.execute("INSERT INTO PropProj_part (Name,Type,ImageUrl) VALUES ('%s','%s','%s')"%(partname,type,ImageUrl))
     conn.commit()
 def add_part_spec(partid,value):
     c.execute("INSERT INTO PropProj_partspecs (PartID_id,value,SpecID_id) VALUES ('%s','%s','%s')"%(partid,value,4))
@@ -59,6 +59,7 @@ def ParseItems(html):
         img = img_name.attrs['src']
         img="air-hobby.ru"+img
         images.append(img)
+    print(images)
     i=0
     for part_name in part_name_list_full:
         if 'Регулятор' or 'Flight Controller' in part_name.text:
@@ -67,14 +68,17 @@ def ParseItems(html):
             sliced = sliced.replace("отзыва", "")
             sliced = sliced.replace("отзыв", "")
             sliced=sliced[:len(sliced)-2]
-            #print(sliced)
+            print(sliced)
             #if len(sliced)>0:
                 #add_part(sliced,"ESC")
             toHref = part_name.attrs['href']
             toHref="https://air-hobby.ru"+toHref
-            add_part(FCTestList[i],"FC",images[i])
+            print(images)
+            add_part(sliced,"FC",images[i])
             #print(ParseSpecs(toHref))
             #add_part(sliced,"motor")
+        if i>len(images)-2:
+            break
         i+=1
 
 
