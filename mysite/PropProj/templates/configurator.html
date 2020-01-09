@@ -166,7 +166,6 @@ nav ul {
 <body>
 
 <header>
-
     <a class="logo" style="color:#b22222">PropWash</a>
     <button style="float: right;" type="button" style="margin-top:3px" class="color red button" type="submit" onClick='location.href="/login"' align="right">Вход</button>
 
@@ -178,14 +177,15 @@ nav ul {
     </nav>
 </header>
 <div class="container" id="app">
-    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
+    <form class="form" action="/add_drone/" method="post" style="margin-top: 15px;">
+        {% csrf_token %}
         <div class="form-group row" v-for="category in catalog">
 
             <div class="col-2"><strong>${category['name']}</strong></div>
             <div class="col-8">
-                <p><select name="part" class="form-control" v-model="models[category['name']]" id="inlineFormCustomSelectPref">
+                <p><select :name="category['name']" class="form-control" v-model="models[category['name']]" id="inlineFormCustomSelectPref">
                     <option>Выберите комплектующую</option>
-                    <option v-for="items in category['items']" :disabled="check(items)" v-bind:value="items">${
+                    <option v-for="items in category['items']" :disabled="check(items)" v-bind:value="items.id">${
                         items.name } </option>
                 </select></p>
             </div>
@@ -197,9 +197,8 @@ nav ul {
 
             </div>
         </div>
-    </form>
 
-    ${ models }
+    </form>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
@@ -242,13 +241,10 @@ nav ul {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     data = JSON.parse('{{catalog|safe}}');
     console.log(data)
-
     var app = new Vue({
       el: '#app',
       data: {
@@ -276,6 +272,7 @@ nav ul {
       delimiters: ['${', '}']
     })
 </script>
-<a href="/add_drone">добавить дрон</a>
+<form method="POST">
+</form>
 </body>
 </html>
