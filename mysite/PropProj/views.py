@@ -39,7 +39,7 @@ def hello_world(request):
     #if part.Type != part.Type + 1:
 
 def index(request):
-    return request.GET
+    return render(request,"index.html")
 def help(request):
     return render(request,"help.html")
 

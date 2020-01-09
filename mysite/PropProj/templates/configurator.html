@@ -157,9 +157,7 @@ nav ul {
 <body>
 <header>
     <a class="logo">PropWash</a>
-     <button type="button" class="color red button" type="submit" href="/login">
-                    Вход
-                </button>
+     <button type="button" class="color red button" type="submit" onClick='location.href="/login"' align="right">Вход</button>
     <nav>
         <ul class="topmenu">
             <li style="margin-right:20px"><a href="">Каталог</a></li>
@@ -177,7 +175,8 @@ nav ul {
             <div class="col-8">
                 <p><select name="part" class="form-control" id="inlineFormCustomSelectPref">
                     <option>Выберите комплектующую</option>
-                    <option v-for="items in category['items']" value="">${ items.name }</option>
+                    <option v-for="items in category['items']" :disabled="check(items)" v-bind:value="items">${
+                        items.name } </option>
 
                 </select></p>
             </div>
