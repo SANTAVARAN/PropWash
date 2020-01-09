@@ -14,7 +14,7 @@ class Part(models.Model):
     Name = models.CharField(max_length=20, help_text="")
     Type = models.CharField(max_length=20, help_text="")
     specs = models.ManyToManyField(Specs, through='PartSpecs')
-
+    ImageUrl=models.CharField(max_length=350,help_text="image of part")
     def __str__(self):
         return "{} ({})".format(self.Name, self.Type)
 
