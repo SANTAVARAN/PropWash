@@ -52,8 +52,12 @@ def ParseItems(html):
     page = requests.get(html)
     FCTestList = []
     soup = BeautifulSoup(page.text, 'html.parser')
-    part_name_list = soup.find_all(class_='vmBrowse clearfix overflow')
-    part_name_list_full = part_name_list.find('a')
+    part_name_list = soup.find(class_='vmBrowse clearfix overflow')
+    part_name_list_full=part_name_list.find_all('a')
+    #print(soup.find_all('a'))
+    #part_name_list = soup.find_all('div', {'class': ["vmBrowse", "clearfix", "overflow"]})
+    #print(part_name_list)
+    part_name_list_full = part_name_list.find_all('a')
 
     for part_name in part_name_list_full:
         if 'Регулятор' or 'Flight Controller' in part_name.text:
