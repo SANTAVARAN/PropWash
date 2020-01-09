@@ -22,7 +22,7 @@ from PropProj import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('PropProj/', include('PropProj.urls')),
+    path('', include('PropProj.urls')),
     path('index', views.index),
     path('login/', login_user),
     path('register/', register),
