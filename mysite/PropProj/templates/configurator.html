@@ -41,7 +41,7 @@ body {
   background: #f2f2f2;
 }
 header {
-  background: red;
+  background: #9c111f;
   text-align: center;
   height:120px;
 }
@@ -115,7 +115,42 @@ nav ul {
   opacity: 1;
     transform: scaleY(1);
 }
-
+.button{
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  padding: 6px 20px;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 13px arial, helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #555;
+  background-color: #ddd;
+  background-image: linear-gradient(top, rgba(0,0,255,1),
+                                         rgba(0,0,255,0)),
+                    url(data:image/png;base64,iVBORw0KGg[...]QmCC);
+  transition: background-color .2s ease-out;
+  background-clip: padding-box; /* Fix bleeding */
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 0, 0, .3),
+              0 2px 2px +1px rgba(255, 0, 0, .5),
+              0 1px 0 rgba(255, 255, 255, .3) inset;
+  text-shadow: 0 1px 0 rgba(255,255,255, .9);
+}
+.button:hover{
+  background-color: red;
+  color: #555;
+}
+.button:active{
+  background: #e9e9e9;
+  position: relative;
+  top: 1px;
+  text-shadow: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
 
     </style>
 </head>
@@ -125,7 +160,7 @@ nav ul {
     <nav>
         <ul class="topmenu">
             <li style="margin-right:20px"><a href="">Каталог</a></li>
-            <li><a href="">Справка</a></li>
+            <li><a href="help.html">Справка</a></li>
             </ul>
     </nav>
 </header>
@@ -145,7 +180,7 @@ nav ul {
             </div>
 
             <div class="col-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                <button type="button" class="color red button"  data-toggle="modal" data-target="#exampleModal"
                         style="margin-right: auto" v-on:click="current_category=category">
                     Подробнее
                 </button>

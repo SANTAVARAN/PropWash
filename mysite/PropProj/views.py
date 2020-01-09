@@ -38,3 +38,5 @@ def hello_world(request):
 
 def index(request):
     return request.GET
+def help(request):
+    return render(request,"help.html")
