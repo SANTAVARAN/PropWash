@@ -70,3 +70,6 @@ def register(request):
         login(request, user)
 
         return redirect('/PropProj')
+
+def add_drone(request):
+    return render(request,'drone_sn.html')

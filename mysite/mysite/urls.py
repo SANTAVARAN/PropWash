@@ -19,6 +19,7 @@ from django.urls import include, path
 from PropProj.views import login_user
 from PropProj.views import register
 from PropProj import views
+from PropProj.views import add_drone
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('index', views.index),
     path('login/', login_user),
     path('register/', register),
+    path('add_drone/', add_drone),
 ]
