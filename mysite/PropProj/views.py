@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 import json
@@ -40,3 +42,31 @@ def index(request):
     return request.GET
 def help(request):
     return render(request,"help.html")
+
+def login_user(request):
+    if request.method == "GET":
+        return render(request, 'index.html')
+    else:
+        username = request.POST.get('login')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is None:
+            return redirect('/register')
+        else:
+            login(request, user)
+            return redirect('/PropProj')
+
+def register(request):
+    if request.method == "GET":
+        return render(request, 'register.html')
+    else:
+        user = User()
+        user.username = request.POST.get('login')
+        user.set_password(request.POST.get('password'))
+        user.save()
+
+        login(request, user)
+
+        return redirect('/PropProj')

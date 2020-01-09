@@ -157,6 +157,9 @@ nav ul {
 <body>
 <header>
     <a class="logo">PropWash</a>
+     <button type="button" class="color red button" type="submit" href="/login">
+                    Вход
+                </button>
     <nav>
         <ul class="topmenu">
             <li style="margin-right:20px"><a href="">Каталог</a></li>
@@ -241,18 +244,26 @@ nav ul {
     var app = new Vue({
       el: '#app',
       data: {
+        models: {},
         catalog: data,
-        current_category: {"name": "dfdf", "specs": []}
+        current_category: {"name": "", "specs": []}
+      },
+      methods: {
+            check: function(item)
+            {
+                for(name in this.models){
+                   for(i in this.models[name].specs) {
+                        for (j in item.specs)
+                        {
+                            console.log(this.models[name].specs);
+                            if((this.models[name].specs[i][0] == item.specs[j][0]) && (this.models[name].specs[i][1] != item.specs[j][1])) return true;
+                        }
+                   }
+                }
+            }
       },
       delimiters: ['${', '}']
-
     })
-
-
-
-
-
-
 </script>
 </body>
 </html>

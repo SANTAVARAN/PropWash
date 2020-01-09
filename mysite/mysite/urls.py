@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
-
+from PropProj.views import login_user
+from PropProj.views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('PropProj/', include('PropProj.urls')),
+    path('login/', login_user),
+    path('register/', register),
 ]
