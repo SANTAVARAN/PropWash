@@ -52,27 +52,33 @@ def ParseItems(html):
     page = requests.get(html)
     FCTestList = []
     soup = BeautifulSoup(page.text, 'html.parser')
-    part_name_list = soup.find_all(class_='grid-content')
-    for part_name in part_name_list:
+    part_name_list = soup.find_all(class_='vmBrowse clearfix overflow')
+    part_name_list_full = part_name_list.find('a')
 
-        if 'Полетный контроллер' or 'Flight Controller' in part_name.text:
+    for part_name in part_name_list_full:
+        if 'Регулятор' or 'Flight Controller' in part_name.text:
             FCTestList.append(part_name.text)
-    toHref = soup.find_all(class_='grid-entry-title entry-title')
-    i=12
+            sliced=part_name.text.replace("отзывов","")
+            sliced = sliced.replace("отзыва", "")
+            sliced = sliced.replace("отзыв", "")
+            sliced=sliced[:len(sliced)-2]
+            print(sliced)
+            #if len(sliced)>0:
+                #add_part(sliced,"ESC")
+    toHref = part_name_list_full.attrs['href']
     for result in toHref:
         tohref2 = result.find('a')
         print()
         #add_part(FCTestList[i],"FC")
-
-        add_part_spec(i,ParseSpecs(tohref2.attrs['href'])[1])
+        print(ParseSpecs(tohref2.attrs['href']))
+        #add_part_spec(i,ParseSpecs(tohref2.attrs['href'])[1])
         print(tohref2.attrs['href'])
         print()
-        i += 1
 
 
     #print(FCTestList)
 
 
-ParseItems('http://www.mateksys.com/?page_id=3834')
+ParseItems('https://air-hobby.ru/katalog/category/88-regulyatori-skorosti.html')
 #ParseSpecs("http://www.mateksys.com/?portfolio=f411-wing")
 #ParseSpecs("http://www.mateksys.com/?portfolio=f722-std#tab-id-2")
