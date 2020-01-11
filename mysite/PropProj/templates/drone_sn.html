@@ -173,6 +173,26 @@ nav ul {
     </nav>
 </header>
 <div class="container" id="app">
+    <form class="form" action="/PropProj/index" style="margin-top: 15px;">
+        <div class="form-group row" v-for="category in catalog">
+
+            <div class="col-2"><strong>${category['name']}</strong></div>
+            <div class="col-8">
+                <p><select name="part" class="form-control" v-model="models[category['name']]" id="inlineFormCustomSelectPref">
+                    <option>Выберите комплектующую</option>
+                    <option v-for="items in category['items']" :disabled="check(items)" v-bind:value="items">${
+                        items.name } </option>
+                </select></p>
+            </div>
+            <div class="col-2">
+                <button type="button" class="color red button"  data-toggle="modal" data-target="#exampleModal"
+                        style="margin-right: auto" v-on:click="current_category=category">
+                    Подробнее
+                </button>
+
+            </div>
+        </div>
+    </form>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
@@ -194,6 +214,7 @@ nav ul {
                                 <ul>
                                     <li v-for="spec in item.specs"><strong>${spec[0]}:</strong>${spec[1]}</li>
                                 </ul>
+
                                 </p>
                             </div>
                         </div>
@@ -217,6 +238,37 @@ nav ul {
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    data = JSON.parse('{{catalog|safe}}');
+    console.log(data)
 
+    var app = new Vue({
+      el: '#app',
+      data: {
+        models: {},
+        catalog: data,
+        current_category: {"name": "", "specs": []}
+      },
+      methods: {
+            check: function(item)
+            {
+                console.log("running function...")
+                for(name in this.models){
+                   for(i in this.models[name].specs) {
+                        for (j in item.specs)
+                        {
+                            if((this.models[name].specs[i][0] == item.specs[j][0]) && (this.models[name].specs[i][1] != item.specs[j][1])) {
+                                return true;
+                            }
+                        }
+                   }
+                }
+                return false;
+            }
+      },
+      delimiters: ['${', '}']
+    })
+</script>
 </body>
+lj,fdktybt lhjyf
 </html>

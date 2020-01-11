@@ -25,7 +25,6 @@ def hello_world(request):
                 ready_specs.append((name, value))
 
             category_items.append({
-                "id": part.id,
                 "name": part.Name,
                 "specs": ready_specs
             })
@@ -67,8 +66,10 @@ def register(request):
         user.username = request.POST.get('login')
         user.set_password(request.POST.get('password'))
         user.save()
+
         login(request, user)
+
         return redirect('/PropProj')
+
 def add_drone(request):
-    drone = Drone(),
-    return render(request,'drone_sn.html')
+    return redirect('/add_drone')
