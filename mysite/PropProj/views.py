@@ -56,7 +56,7 @@ def login_user(request):
             return redirect('/register')
         else:
             login(request, user)
-            return redirect('/PropProj')
+            return redirect('/')
 
 def register(request):
     if request.method == "GET":
@@ -69,7 +69,7 @@ def register(request):
 
         login(request, user)
 
-        return redirect('/PropProj')
+        return redirect('/')
 
 def add_drone(request):
     return render(request,"drone_sn.html")
