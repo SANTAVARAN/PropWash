@@ -72,4 +72,4 @@ def register(request):
         return redirect('/PropProj')
 
 def add_drone(request):
-    return redirect('/add_drone')
+    return render(request,"drone_sn.html")
