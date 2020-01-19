@@ -57,7 +57,6 @@ def login_user(request):
         else:
             login(request, user)
             return redirect('/')
-
 def register(request):
     if request.method == "GET":
         return render(request, 'register.html')
